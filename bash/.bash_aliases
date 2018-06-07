@@ -8,6 +8,7 @@ alias git-sudo="GIT_SSH='$HOME/.ssh/git-sudo' git"
 
 # SSH aliases
 alias sshi='ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null'
+fixsssock() { export SSH_AUTH_SOCK="$(find /tmp -uid $(id -u) -name 'agent.*' -type s 2>/dev/null|head -1)" }
 
 # GIT aliases
 alias g=git
